@@ -1,0 +1,22 @@
+<h1>予定の新規追加</h1>
+
+<%= form_for(@task, url:{ controller: "tasks", action: "create" }) do |form| %>
+	<div class="form_group">
+		<label_for="title">タイトル</label>
+	<%= form.text_field :title, class:"form_control" %>
+	</div>
+	<div class="form_group">
+		<label_for="start-day">開始日</label>
+	<%= form.date_field :start_day, class:"form_control" %>
+	</div>
+	<div class="form_group">
+		<label_for="end-day">終了日</label>
+	<%= form.date_field :end_day, class:"form_control" %>
+	</div>
+	<div class="form_group">
+		<label_for="all-day">終日</label>
+	<%= form.check_box :all_day,{},"true", "false" %>
+	</div>
+	
+	<%= form.submit ("保存")%>
+<%end%>
