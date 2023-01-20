@@ -1,7 +1,7 @@
 class TasksController < ActionController::Base
 	
   def index
-		@task = Task.all
+		@tasks = Task.all
 
 
 	end
@@ -9,12 +9,19 @@ class TasksController < ActionController::Base
 		@task = Task.new
 	end
 	def create
-		
-			@task=Task.create(params[:tasks])
-			
 	
-		redirect_to'/tasks/index'
+		@task = Task.new(params.require(:task).permit(:title, :start_day, :end_day, :all_day))
+
+     if @task.save
+		
+			flash[:notice] = "ユーザーを新規登録しました"
+       redirect_to "/tasks/index"
+     else
+       render "new"
+     end
 	end
+
+	
 	
 
 	
