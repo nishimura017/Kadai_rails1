@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Task.create ([{title:'reina', start_day:20231116, end_day:20231116, all_day:true, created_at:20231116, updated_at:20231116}])
+Task.create ([{title:'shuzo', start_day:20241116, end_day:20241116, all_day:true, created_at:20241116, updated_at:20241116}])
